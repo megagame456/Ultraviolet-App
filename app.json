@@ -1,7 +1,24 @@
 {
-	"name": "Ultraviolet App",
-	"description": "Node.js Ultraviolet instance",
-	"repository": "https://github.com/titaniumnetwork-dev/Ultraviolet-App",
-	"logo": "https://raw.githubusercontent.com/titaniumnetwork-dev/Ultraviolet-Static/main/public/uv.png",
-	"keywords": ["tomp", "ultraviolet"]
+  "name": "Ultraviolet",
+  "description": "Proxy powered by service workers",
+  "repository": "https://github.com/megagame456/Ultraviolet-App",
+  "keywords": ["proxy", "ultraviolet", "service-worker"],
+  "env": {
+    "NODE_ENV": {
+      "description": "Node environment",
+      "value": "production"
+    },
+    "PORT": {
+      "description": "Port to run app",
+      "value": "8080"
+    }
+  },
+  "scripts": {
+    "postdeploy": "npm install && npm run start"
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
 }
